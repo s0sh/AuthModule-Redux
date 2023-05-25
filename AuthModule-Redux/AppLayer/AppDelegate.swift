@@ -8,8 +8,6 @@
 import UIKit
 import ReSwift
 
-let mainStore = Store<LoginState>(reducer: loginReducer, state: nil)
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     

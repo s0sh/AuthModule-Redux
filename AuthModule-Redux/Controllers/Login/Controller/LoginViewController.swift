@@ -13,10 +13,17 @@ final class LoginViewController: BaseController {
     private let authBlock = CSAuthorizationBlock()
     
     override func viewWillAppear(_ animated: Bool) {
-        mainStore.subscribe(self)
+      super.viewWillAppear(animated)
+      mainStore.subscribe(self) {
+        $0.select {
+          $0.loginState
+        }
+      }
+      mainStore.dispatch(RoutingAction(destination: .login))
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
         mainStore.unsubscribe(self)
     }
 }

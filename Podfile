@@ -6,5 +6,5 @@ target 'AuthModule-Redux' do
   use_frameworks!
 
   # Pods for AuthModule-Redux
-  pod 'ReSwift'
+  pod 'ReSwift'=> '6.1.1'
 end

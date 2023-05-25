@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import ReSwift
+
+let mainStore = Store<AppState>(reducer: appReducer, state: nil)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var appRouter: AppRouter?
+    
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
@@ -23,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigation.viewControllers = [controller]
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
-        
+        appRouter = AppRouter(window: window!)
     }
 
 }

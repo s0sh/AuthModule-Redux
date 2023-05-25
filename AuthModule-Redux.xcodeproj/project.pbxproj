@@ -26,6 +26,12 @@
 		B5A9BA3829E578FD00CB99B1 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9BA3429E578FD00CB99B1 /* UIView+Ext.swift */; };
 		B5A9BA3E29E57EA200CB99B1 /* CSAuthorizationBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9BA3D29E57EA200CB99B1 /* CSAuthorizationBlock.swift */; };
 		B5A9BA4029E5819300CB99B1 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9BA3F29E5819300CB99B1 /* NetworkWorker.swift */; };
+		B5E1CF3B2A1FBF35002243A1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF3A2A1FBF35002243A1 /* AppState.swift */; };
+		B5E1CF3D2A1FBFA8002243A1 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF3C2A1FBFA8002243A1 /* AppRouter.swift */; };
+		B5E1CF3F2A1FC022002243A1 /* RoutingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF3E2A1FC022002243A1 /* RoutingState.swift */; };
+		B5E1CF412A1FC337002243A1 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF402A1FC337002243A1 /* AppReducer.swift */; };
+		B5E1CF432A1FC40F002243A1 /* RoutingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF422A1FC40F002243A1 /* RoutingReducer.swift */; };
+		B5E1CF452A1FC45B002243A1 /* RoutingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF442A1FC45B002243A1 /* RoutingAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +57,12 @@
 		B5A9BA3429E578FD00CB99B1 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		B5A9BA3D29E57EA200CB99B1 /* CSAuthorizationBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSAuthorizationBlock.swift; sourceTree = "<group>"; };
 		B5A9BA3F29E5819300CB99B1 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
+		B5E1CF3A2A1FBF35002243A1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		B5E1CF3C2A1FBFA8002243A1 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		B5E1CF3E2A1FC022002243A1 /* RoutingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingState.swift; sourceTree = "<group>"; };
+		B5E1CF402A1FC337002243A1 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		B5E1CF422A1FC40F002243A1 /* RoutingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingReducer.swift; sourceTree = "<group>"; };
+		B5E1CF442A1FC45B002243A1 /* RoutingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingAction.swift; sourceTree = "<group>"; };
 		DEF68F6848B4AE2BC06BDF05 /* Pods-AuthModule-Redux.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthModule-Redux.release.xcconfig"; path = "Target Support Files/Pods-AuthModule-Redux/Pods-AuthModule-Redux.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +116,7 @@
 		B5A9B9FC29E529C300CB99B1 /* AuthModule-Redux */ = {
 			isa = PBXGroup;
 			children = (
+				B5E1CF492A1FCB4F002243A1 /* ReduxLayer */,
 				B5A9BA2529E578DE00CB99B1 /* AppBaseViews */,
 				B5A9BA2E29E578FD00CB99B1 /* Resources */,
 				B5A9BA3229E578FD00CB99B1 /* Extensions */,
@@ -119,30 +132,6 @@
 				B5A9BA3F29E5819300CB99B1 /* NetworkWorker.swift */,
 			);
 			path = Middleware;
-			sourceTree = "<group>";
-		};
-		B5A9BA1229E529FE00CB99B1 /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				B5A9BA1B29E573AB00CB99B1 /* LoginAction.swift */,
-			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
-		B5A9BA1329E52A0B00CB99B1 /* Reducers */ = {
-			isa = PBXGroup;
-			children = (
-				B5A9BA1929E5726100CB99B1 /* LoginReducer.swift */,
-			);
-			path = Reducers;
-			sourceTree = "<group>";
-		};
-		B5A9BA1429E52A1F00CB99B1 /* States */ = {
-			isa = PBXGroup;
-			children = (
-				B5A9BA1529E541B500CB99B1 /* LoginState.swift */,
-			);
-			path = States;
 			sourceTree = "<group>";
 		};
 		B5A9BA2529E578DE00CB99B1 /* AppBaseViews */ = {
@@ -197,9 +186,7 @@
 		B5A9BA3B29E57E8700CB99B1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				B5A9BA1429E52A1F00CB99B1 /* States */,
-				B5A9BA1329E52A0B00CB99B1 /* Reducers */,
-				B5A9BA1229E529FE00CB99B1 /* Actions */,
+				B5A9BA3C29E57EA200CB99B1 /* ViewComponents */,
 				B5A9BA1129E529ED00CB99B1 /* Middleware */,
 				B5A9BA4129E5878100CB99B1 /* Controller */,
 			);
@@ -217,10 +204,57 @@
 		B5A9BA4129E5878100CB99B1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B5A9BA3C29E57EA200CB99B1 /* ViewComponents */,
 				B5A9BA0129E529C300CB99B1 /* LoginViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		B5E1CF392A1FBF1F002243A1 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9BA1529E541B500CB99B1 /* LoginState.swift */,
+				B5E1CF3A2A1FBF35002243A1 /* AppState.swift */,
+				B5E1CF3E2A1FC022002243A1 /* RoutingState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		B5E1CF462A1FC65F002243A1 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				B5E1CF3C2A1FBFA8002243A1 /* AppRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		B5E1CF472A1FC6FA002243A1 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				B5E1CF442A1FC45B002243A1 /* RoutingAction.swift */,
+				B5A9BA1B29E573AB00CB99B1 /* LoginAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		B5E1CF482A1FC719002243A1 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				B5E1CF422A1FC40F002243A1 /* RoutingReducer.swift */,
+				B5A9BA1929E5726100CB99B1 /* LoginReducer.swift */,
+				B5E1CF402A1FC337002243A1 /* AppReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		B5E1CF492A1FCB4F002243A1 /* ReduxLayer */ = {
+			isa = PBXGroup;
+			children = (
+				B5E1CF482A1FC719002243A1 /* Reducers */,
+				B5E1CF472A1FC6FA002243A1 /* Actions */,
+				B5E1CF462A1FC65F002243A1 /* Routers */,
+				B5E1CF392A1FBF1F002243A1 /* States */,
+			);
+			path = ReduxLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E1CF3F2A1FC022002243A1 /* RoutingState.swift in Sources */,
 				B5A9BA0229E529C300CB99B1 /* LoginViewController.swift in Sources */,
 				B5A9BA1629E541B500CB99B1 /* LoginState.swift in Sources */,
 				B5A9BA2A29E578DE00CB99B1 /* BaseController.swift in Sources */,
@@ -345,13 +380,18 @@
 				B5A9BA3829E578FD00CB99B1 /* UIView+Ext.swift in Sources */,
 				B5A9BA2C29E578DE00CB99B1 /* CSBaseButton.swift in Sources */,
 				B5A9B9FE29E529C300CB99B1 /* AppDelegate.swift in Sources */,
+				B5E1CF452A1FC45B002243A1 /* RoutingAction.swift in Sources */,
 				B5A9BA3729E578FD00CB99B1 /* UIColor+Ext.swift in Sources */,
+				B5E1CF432A1FC40F002243A1 /* RoutingReducer.swift in Sources */,
 				B5A9BA4029E5819300CB99B1 /* NetworkWorker.swift in Sources */,
 				B5A9BA0029E529C300CB99B1 /* SceneDelegate.swift in Sources */,
 				B5A9BA2D29E578DE00CB99B1 /* BaseView.swift in Sources */,
+				B5E1CF3B2A1FBF35002243A1 /* AppState.swift in Sources */,
 				B5A9BA3529E578FD00CB99B1 /* Resources.swift in Sources */,
 				B5A9BA1A29E5726100CB99B1 /* LoginReducer.swift in Sources */,
 				B5A9BA1C29E573AB00CB99B1 /* LoginAction.swift in Sources */,
+				B5E1CF3D2A1FBFA8002243A1 /* AppRouter.swift in Sources */,
+				B5E1CF412A1FC337002243A1 /* AppReducer.swift in Sources */,
 				B5A9BA3E29E57EA200CB99B1 /* CSAuthorizationBlock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
