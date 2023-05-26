@@ -10,7 +10,7 @@ import ReSwift
 struct RoutingState: StateType {
   var navigationState: RoutingDestination
   
-  init(navigationState: RoutingDestination = .login) {
+    init(navigationState: RoutingDestination = .login) {
     self.navigationState = navigationState
   }
 }

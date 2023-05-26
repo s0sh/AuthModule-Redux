@@ -9,6 +9,7 @@ import ReSwift
 
 enum RoutingDestination: String {
     case login = "LoginViewController"
+    case userInfo = "UserInfoViewController"
 }
 
 final class AppRouter {
@@ -26,7 +27,17 @@ final class AppRouter {
     }
 
 fileprivate func pushViewController(identifier: String, animated: Bool) {
-    let viewController = instantiateViewController(identifier: identifier)
+    var viewController: UIViewController = UIViewController()
+    
+    switch identifier {
+    case RoutingDestination.login.rawValue:
+        viewController = LoginViewController()
+    case RoutingDestination.userInfo.rawValue:
+        viewController = UserInfoViewController()
+    default:
+        print("")
+    }
+    
     let newViewControllerType = type(of: viewController)
     if let currentVc = navigationController.topViewController {
         let currentViewControllerType = type(of: currentVc)
@@ -34,14 +45,9 @@ fileprivate func pushViewController(identifier: String, animated: Bool) {
             return
         }
     }
-    
     navigationController.pushViewController(viewController, animated: animated)
-}
+ }
 
-private func instantiateViewController(identifier: String) -> UIViewController {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    return storyboard.instantiateViewController(withIdentifier: identifier)
-}
 }
 
 // MARK: - StoreSubscriber

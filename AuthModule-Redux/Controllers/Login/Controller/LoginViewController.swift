@@ -10,20 +10,19 @@ import ReSwift
 
 final class LoginViewController: BaseController {
     
-    private let authBlock = CSAuthorizationBlock()
+    private let authBlock = CSAuthorizationView()
     
     override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-      mainStore.subscribe(self) {
-        $0.select {
-          $0.loginState
+        super.viewWillAppear(animated)
+        mainStore.subscribe(self) {
+            $0.select {
+                $0.loginState
+            }
         }
-      }
-      mainStore.dispatch(RoutingAction(destination: .login))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-      super.viewWillDisappear(animated)
+        super.viewWillDisappear(animated)
         mainStore.unsubscribe(self)
     }
 }
@@ -49,12 +48,14 @@ extension LoginViewController {
         authBlock.buttonPressedCallback = { (email, password) in
             mainStore.dispatch(LoginAction(email: email, password: password))
         }
+        
+        authBlock.mainButtonPressedCallback = {
+            mainStore.dispatch(RoutingAction(destination: .userInfo))
+        }
     }
 }
 
 extension LoginViewController: StoreSubscriber {
     func newState(state: LoginState) {
-        // Do smth w/ income data from the backend/local storage
-        print(state)
     }
 }

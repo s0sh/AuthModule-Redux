@@ -2,9 +2,10 @@
 # platform :ios, '9.0'
 
 target 'AuthModule-Redux' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for AuthModule-Redux
-  pod 'ReSwift'=> '6.1.1'
+  source 'https://github.com/CocoaPods/Specs.git'
+  platform :ios, '8.0'
+
+  pod 'ReSwift'
 end

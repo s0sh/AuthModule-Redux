@@ -22,6 +22,7 @@ enum Resources {
         static let mainAppGray = UIColor(hexString: "#F9F9F9")
         static let devider = UIColor(hexString: "#D8D8D8")
         static let tipColor = UIColor(hexString: "#1C1939").withAlphaComponent(0.8)
+        static let red = UIColor.red
     }
    
     enum Fonts {
@@ -38,6 +39,7 @@ enum Resources {
         static let password = "Password"
         static let email = "Email"
         static let name = "Name"
+        static let main = "To Main Screen"
     }
     
     enum Icons {

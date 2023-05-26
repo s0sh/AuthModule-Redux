@@ -9,9 +9,10 @@ import UIKit
 
 // swiftlint:disable trailing_whitespace
 
-final class CSAuthorizationBlock: BaseView {
+final class CSAuthorizationView: BaseView {
     
     var buttonPressedCallback: ((String, String) -> Void)?
+    var mainButtonPressedCallback: (() -> Void)?
     
     private let userNameTextField: CSTextField = {
         let textField = CSTextField(placeholder: R.Strings.email, isActive: true)
@@ -33,6 +34,13 @@ final class CSAuthorizationBlock: BaseView {
         return button
     }()
     
+    private lazy var mainButton: CSBaseButton = {
+        let button = CSBaseButton(with: .regular, title: R.Strings.main)
+        button.addTarget(target: self, action: #selector(mainButtonPressed))
+        button.isHidden = true
+        return button
+    }()
+    
     private let stackView: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 15
@@ -43,10 +51,17 @@ final class CSAuthorizationBlock: BaseView {
     
     @objc func buttonPressed() {
         buttonPressedCallback?(userNameTextField.text, userPasswordTextField.text)
+        mainButton.isHidden = false
+        sendButton.isHidden = true
+        layoutSubviews()
+    }
+    
+    @objc func mainButtonPressed() {
+        mainButtonPressedCallback?()
     }
 }
 
-extension CSAuthorizationBlock {
+extension CSAuthorizationView {
     override func addViews() {
         super.addViews()
         addView(stackView)
@@ -56,10 +71,10 @@ extension CSAuthorizationBlock {
         super.layoutSubviews()
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 1),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 1),
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -1),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -1)
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
         ])
     }
     
@@ -68,13 +83,14 @@ extension CSAuthorizationBlock {
         stackView.addArrangedSubview(userNameTextField)
         stackView.addArrangedSubview(userPasswordTextField)
         stackView.addArrangedSubview(sendButton)
+        stackView.addArrangedSubview(mainButton)
         
         userNameTextField.delegate = self
         userPasswordTextField.delegate = self
     }
 }
 
-extension CSAuthorizationBlock: CSTextFieldDelegate {
+extension CSAuthorizationView: CSTextFieldDelegate {
     func deactivateAll(except tag: Int) {
         for element in stackView.subviews where element is CSTextField {
             if (element as? CSTextField)?.tag != tag {

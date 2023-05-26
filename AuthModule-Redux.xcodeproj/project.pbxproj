@@ -24,7 +24,7 @@
 		B5A9BA3529E578FD00CB99B1 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9BA2F29E578FD00CB99B1 /* Resources.swift */; };
 		B5A9BA3729E578FD00CB99B1 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9BA3329E578FD00CB99B1 /* UIColor+Ext.swift */; };
 		B5A9BA3829E578FD00CB99B1 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9BA3429E578FD00CB99B1 /* UIView+Ext.swift */; };
-		B5A9BA3E29E57EA200CB99B1 /* CSAuthorizationBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9BA3D29E57EA200CB99B1 /* CSAuthorizationBlock.swift */; };
+		B5A9BA3E29E57EA200CB99B1 /* CSAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9BA3D29E57EA200CB99B1 /* CSAuthorizationView.swift */; };
 		B5A9BA4029E5819300CB99B1 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9BA3F29E5819300CB99B1 /* NetworkWorker.swift */; };
 		B5E1CF3B2A1FBF35002243A1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF3A2A1FBF35002243A1 /* AppState.swift */; };
 		B5E1CF3D2A1FBFA8002243A1 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF3C2A1FBFA8002243A1 /* AppRouter.swift */; };
@@ -32,6 +32,10 @@
 		B5E1CF412A1FC337002243A1 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF402A1FC337002243A1 /* AppReducer.swift */; };
 		B5E1CF432A1FC40F002243A1 /* RoutingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF422A1FC40F002243A1 /* RoutingReducer.swift */; };
 		B5E1CF452A1FC45B002243A1 /* RoutingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF442A1FC45B002243A1 /* RoutingAction.swift */; };
+		B5E1CF4B2A1FF50F002243A1 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF4A2A1FF50F002243A1 /* UserInfoViewController.swift */; };
+		B5E1CF4D2A1FF5F9002243A1 /* UserInfoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF4C2A1FF5F9002243A1 /* UserInfoState.swift */; };
+		B5E1CF4F2A20989B002243A1 /* UserInfoReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF4E2A20989B002243A1 /* UserInfoReducer.swift */; };
+		B5E1CF512A20A325002243A1 /* UserInfoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1CF502A20A325002243A1 /* UserInfoAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +59,7 @@
 		B5A9BA2F29E578FD00CB99B1 /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		B5A9BA3329E578FD00CB99B1 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		B5A9BA3429E578FD00CB99B1 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
-		B5A9BA3D29E57EA200CB99B1 /* CSAuthorizationBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSAuthorizationBlock.swift; sourceTree = "<group>"; };
+		B5A9BA3D29E57EA200CB99B1 /* CSAuthorizationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSAuthorizationView.swift; sourceTree = "<group>"; };
 		B5A9BA3F29E5819300CB99B1 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
 		B5E1CF3A2A1FBF35002243A1 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B5E1CF3C2A1FBFA8002243A1 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -63,6 +67,10 @@
 		B5E1CF402A1FC337002243A1 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		B5E1CF422A1FC40F002243A1 /* RoutingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingReducer.swift; sourceTree = "<group>"; };
 		B5E1CF442A1FC45B002243A1 /* RoutingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingAction.swift; sourceTree = "<group>"; };
+		B5E1CF4A2A1FF50F002243A1 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		B5E1CF4C2A1FF5F9002243A1 /* UserInfoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoState.swift; sourceTree = "<group>"; };
+		B5E1CF4E2A20989B002243A1 /* UserInfoReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoReducer.swift; sourceTree = "<group>"; };
+		B5E1CF502A20A325002243A1 /* UserInfoAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAction.swift; sourceTree = "<group>"; };
 		DEF68F6848B4AE2BC06BDF05 /* Pods-AuthModule-Redux.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthModule-Redux.release.xcconfig"; path = "Target Support Files/Pods-AuthModule-Redux/Pods-AuthModule-Redux.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,7 +204,7 @@
 		B5A9BA3C29E57EA200CB99B1 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
-				B5A9BA3D29E57EA200CB99B1 /* CSAuthorizationBlock.swift */,
+				B5A9BA3D29E57EA200CB99B1 /* CSAuthorizationView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				B5A9BA0129E529C300CB99B1 /* LoginViewController.swift */,
+				B5E1CF4A2A1FF50F002243A1 /* UserInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,6 +224,7 @@
 				B5A9BA1529E541B500CB99B1 /* LoginState.swift */,
 				B5E1CF3A2A1FBF35002243A1 /* AppState.swift */,
 				B5E1CF3E2A1FC022002243A1 /* RoutingState.swift */,
+				B5E1CF4C2A1FF5F9002243A1 /* UserInfoState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -232,6 +242,7 @@
 			children = (
 				B5E1CF442A1FC45B002243A1 /* RoutingAction.swift */,
 				B5A9BA1B29E573AB00CB99B1 /* LoginAction.swift */,
+				B5E1CF502A20A325002243A1 /* UserInfoAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -242,6 +253,7 @@
 				B5E1CF422A1FC40F002243A1 /* RoutingReducer.swift */,
 				B5A9BA1929E5726100CB99B1 /* LoginReducer.swift */,
 				B5E1CF402A1FC337002243A1 /* AppReducer.swift */,
+				B5E1CF4E2A20989B002243A1 /* UserInfoReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -377,12 +389,16 @@
 				B5A9BA1629E541B500CB99B1 /* LoginState.swift in Sources */,
 				B5A9BA2A29E578DE00CB99B1 /* BaseController.swift in Sources */,
 				B5A9BA2B29E578DE00CB99B1 /* CSTextField.swift in Sources */,
+				B5E1CF4B2A1FF50F002243A1 /* UserInfoViewController.swift in Sources */,
+				B5E1CF512A20A325002243A1 /* UserInfoAction.swift in Sources */,
 				B5A9BA3829E578FD00CB99B1 /* UIView+Ext.swift in Sources */,
 				B5A9BA2C29E578DE00CB99B1 /* CSBaseButton.swift in Sources */,
 				B5A9B9FE29E529C300CB99B1 /* AppDelegate.swift in Sources */,
 				B5E1CF452A1FC45B002243A1 /* RoutingAction.swift in Sources */,
 				B5A9BA3729E578FD00CB99B1 /* UIColor+Ext.swift in Sources */,
 				B5E1CF432A1FC40F002243A1 /* RoutingReducer.swift in Sources */,
+				B5E1CF4D2A1FF5F9002243A1 /* UserInfoState.swift in Sources */,
+				B5E1CF4F2A20989B002243A1 /* UserInfoReducer.swift in Sources */,
 				B5A9BA4029E5819300CB99B1 /* NetworkWorker.swift in Sources */,
 				B5A9BA0029E529C300CB99B1 /* SceneDelegate.swift in Sources */,
 				B5A9BA2D29E578DE00CB99B1 /* BaseView.swift in Sources */,
@@ -392,7 +408,7 @@
 				B5A9BA1C29E573AB00CB99B1 /* LoginAction.swift in Sources */,
 				B5E1CF3D2A1FBFA8002243A1 /* AppRouter.swift in Sources */,
 				B5E1CF412A1FC337002243A1 /* AppReducer.swift in Sources */,
-				B5A9BA3E29E57EA200CB99B1 /* CSAuthorizationBlock.swift in Sources */,
+				B5A9BA3E29E57EA200CB99B1 /* CSAuthorizationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +564,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,6 +598,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

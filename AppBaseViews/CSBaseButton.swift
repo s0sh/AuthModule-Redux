@@ -12,6 +12,7 @@ enum ButtonType {
     case dark
     case gray
     case clear
+    case red
 }
 
 final class CSBaseButton: BaseView {
@@ -83,6 +84,8 @@ extension CSBaseButton {
             button.backgroundColor = .clear
             button.setTitleColor(R.Colors.tipColor, for: .normal)
             button.titleLabel?.font = R.Fonts.helveticaRegular(with: 15)
+        case .red:
+            button.backgroundColor = R.Colors.red
         }
         makeSystem(button)
         button.layer.cornerRadius = 10
