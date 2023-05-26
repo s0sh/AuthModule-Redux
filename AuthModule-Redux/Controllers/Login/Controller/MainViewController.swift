@@ -8,7 +8,7 @@
 import UIKit
 import ReSwift
 
-final class UserInfoViewController: BaseController {
+final class MainViewController: BaseController {
     
     private let infoLabel: UILabel = {
         let label = UILabel()
@@ -20,14 +20,14 @@ final class UserInfoViewController: BaseController {
         super.viewWillAppear(animated)
         mainStore.subscribe(self) {
             $0.select {
-                $0.userInfoState
+                $0.mainState
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainStore.dispatch(UserInfoAction())
+        mainStore.dispatch(MainAction())
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,7 +36,7 @@ final class UserInfoViewController: BaseController {
     }
 }
 
-extension UserInfoViewController {
+extension MainViewController {
     
     override func setupViews() {
         super.setupViews()
@@ -53,8 +53,8 @@ extension UserInfoViewController {
     }
 }
 
-extension UserInfoViewController: StoreSubscriber {
-    func newState(state: UserInfoState) {
+extension MainViewController: StoreSubscriber {
+    func newState(state: MainState) {
         // Do smth w/ income data from the backend/local storage
         self.infoLabel.text = state.address
     }

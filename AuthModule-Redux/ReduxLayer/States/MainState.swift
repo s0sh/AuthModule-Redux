@@ -8,7 +8,7 @@
 import Foundation
 import ReSwift
 
-struct UserInfoState: StateType {
+struct MainState: StateType {
     var phone: String = ""
     var email: String = ""
     var address: String = ""

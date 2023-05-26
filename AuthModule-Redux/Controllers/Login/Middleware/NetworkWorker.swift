@@ -14,8 +14,6 @@ struct Parameters {
 
 struct NetworkWorker {
     
-    
-    
    static func sendLoginRequest(to url: URL,
                      parameters: Parameters,
                      completion: @escaping (LoginState?, Error?) -> Void) {
@@ -23,7 +21,7 @@ struct NetworkWorker {
        /// Mock staate is being returned just for example
         let userPhone = "+38(099) 111 22 33"
         let userEmail = "dot@dot.com"
-        let address = "Ukrine, Kharkiv, Sadovy Passage 19/33"
+        let address = "Some address"
         
         let response = LoginState(phone: userPhone,
                                   email: userEmail,
@@ -31,16 +29,16 @@ struct NetworkWorker {
         completion(response, nil)
     }
     
-    static func sendUserInfoRequest(to url: URL,
+    static func sendMainRequest(to url: URL,
                       parameters: [String: String],
-                      completion: @escaping (UserInfoState?, Error?) -> Void) {
+                      completion: @escaping (MainState?, Error?) -> Void) {
         /// Any network provider can be added here for requests
         /// Mock staate is being returned just for example
          let userPhone = "+38(099) 111 22 33"
          let userEmail = "dot@dot.com"
-         let address = "Ukrine, Kharkiv, Sadovy Passage 19/33"
+         let address = "Some address"
          
-         let response = UserInfoState(phone: userPhone,
+         let response = MainState(phone: userPhone,
                                    email: userEmail,
                                    address: address)
          completion(response, nil)

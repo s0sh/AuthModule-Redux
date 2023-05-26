@@ -8,11 +8,11 @@
 import Foundation
 import ReSwift
 
-func userInfoReducer(action: Action, state: UserInfoState?) -> UserInfoState {
-    var state = state ?? UserInfoState()
+func mainReducer(action: Action, state: MainState?) -> MainState {
+    var state = state ?? MainState()
     switch action {
-    case let login as UserInfoAction:
-        NetworkWorker.sendUserInfoRequest(to: URL(string: "www.google.com")!,
+    case _ as MainAction:
+        NetworkWorker.sendMainRequest(to: URL(string: "www.google.com")!,
                                   parameters: ["login": "login",
                                                "password": "password"]) { newState, error in
             state = newState!

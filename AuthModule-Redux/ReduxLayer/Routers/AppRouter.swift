@@ -25,29 +25,28 @@ final class AppRouter {
             }
         }
     }
-
-fileprivate func pushViewController(identifier: String, animated: Bool) {
-    var viewController: UIViewController = UIViewController()
     
-    switch identifier {
-    case RoutingDestination.login.rawValue:
-        viewController = LoginViewController()
-    case RoutingDestination.userInfo.rawValue:
-        viewController = UserInfoViewController()
-    default:
-        print("")
-    }
-    
-    let newViewControllerType = type(of: viewController)
-    if let currentVc = navigationController.topViewController {
-        let currentViewControllerType = type(of: currentVc)
-        if currentViewControllerType == newViewControllerType {
-            return
+    fileprivate func pushViewController(identifier: String, animated: Bool) {
+        var viewController: UIViewController = UIViewController()
+        
+        switch identifier {
+        case RoutingDestination.login.rawValue:
+            viewController = LoginViewController()
+        case RoutingDestination.userInfo.rawValue:
+            viewController = MainViewController()
+        default:
+            print("")
         }
+        
+        let newViewControllerType = type(of: viewController)
+        if let currentVc = navigationController.topViewController {
+            let currentViewControllerType = type(of: currentVc)
+            if currentViewControllerType == newViewControllerType {
+                return
+            }
+        }
+        navigationController.pushViewController(viewController, animated: animated)
     }
-    navigationController.pushViewController(viewController, animated: animated)
- }
-
 }
 
 // MARK: - StoreSubscriber
