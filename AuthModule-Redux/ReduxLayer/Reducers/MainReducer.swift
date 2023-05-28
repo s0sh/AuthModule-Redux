@@ -12,11 +12,11 @@ func mainReducer(action: Action, state: MainState?) -> MainState {
     var state = state ?? MainState()
     switch action {
     case _ as MainAction:
-        NetworkWorker.sendMainRequest(to: URL(string: "www.google.com")!,
-                                  parameters: ["login": "login",
-                                               "password": "password"]) { newState, error in
-            state = newState!
-        }
+        let newState: MainState = MainState(phone: "33-555-777",
+                                            email: "some@emal.com",
+                                            address: "Some address")
+        state = newState
+    
     default:
         break
     }

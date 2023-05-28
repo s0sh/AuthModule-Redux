@@ -15,9 +15,8 @@ func loginReducer(action: Action, state: LoginState?) -> LoginState {
     switch action {
     case let login as LoginAction:
         let params = Parameters(password: login.password, login: login.email)
-        NetworkWorker.sendLoginRequest(to: URL(string: "www.google.com")!,
-                                       parameters: params) { newState, error in
-            state = newState!
+        NetworkWorker.sendRequest(params: params) { newState in
+            state = newState as! LoginState
         }
     default:
         break
