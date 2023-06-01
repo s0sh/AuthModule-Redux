@@ -7,7 +7,7 @@
 
 import UIKit
 import ReSwift
-
+// MARK: - TEST CLASS TO CHECK TRANSACION
 final class MainViewController: BaseController {
     
     private let infoLabel: UILabel = {
@@ -55,7 +55,6 @@ extension MainViewController {
 
 extension MainViewController: StoreSubscriber {
     func newState(state: MainState) {
-        // Do smth w/ income data from the backend/local storage
         self.infoLabel.text = state.address
     }
 }

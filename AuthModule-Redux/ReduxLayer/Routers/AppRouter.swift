@@ -17,8 +17,11 @@ final class AppRouter {
     let navigationController: UINavigationController
     
     init(window: UIWindow) {
+        
         navigationController = UINavigationController()
+        
         window.rootViewController = navigationController
+        
         mainStore.subscribe(self) {
             $0.select {
                 $0.routingState
@@ -30,17 +33,23 @@ final class AppRouter {
         var viewController: UIViewController = UIViewController()
         
         switch identifier {
+            
         case RoutingDestination.login.rawValue:
             viewController = LoginViewController()
+            
         case RoutingDestination.userInfo.rawValue:
             viewController = MainViewController()
+            
         default:
             print("")
         }
         
         let newViewControllerType = type(of: viewController)
+        
         if let currentVc = navigationController.topViewController {
+            
             let currentViewControllerType = type(of: currentVc)
+            
             if currentViewControllerType == newViewControllerType {
                 return
             }
@@ -51,6 +60,7 @@ final class AppRouter {
 
 // MARK: - StoreSubscriber
 extension AppRouter: StoreSubscriber {
+    
     func newState(state: RoutingState) {
         let shouldAnimate = navigationController.topViewController != nil
         pushViewController(identifier: state.navigationState.rawValue, animated: shouldAnimate)

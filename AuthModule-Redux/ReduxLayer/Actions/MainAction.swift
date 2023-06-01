@@ -8,6 +8,4 @@
 import Foundation
 import ReSwift
 
-struct MainAction: Action {
-   
-}
+struct MainAction: Action {}
